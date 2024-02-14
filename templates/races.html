@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Race Selection</title>
+    </head>
+    <body>
+        <h1>Race Selection</h1>
+        <p>Please select your character race</p>
+        {% if error_message %}
+        <p>{{ error_message }}</p>
+        {% endif %}
+        <form method="POST">
+            {% for race in races %}
+            <input type="radio" name="race" value="{{ race }}"> {{ race }}
+            <a
+                href="{{ url_for('description', category='races', selection=race) }}"><button
+                    type="button">Details</button></a><br>
+            {% endfor %}
+            <a href="/"><button type="button">Back</button></a>
+            <a href="/choice_review"><button type="submit"
+                    formaction=>Next</button></a>
+        </form>
+    </body>
+</html>

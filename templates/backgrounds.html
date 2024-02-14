@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Background Selection</title>
+    </head>
+    <body>
+        <h1>Background Selection</h1>
+        <p>Please select your character background</p>
+        {% if error_message %}
+        <p>{{ error_message }}</p>
+        {% endif %}
+        <form method="POST">
+            {% for background in backgrounds %}
+            <input type="radio" name="background" value="{{ background }}"> {{
+            background }}<a
+                href="{{ url_for('description', category='backgrounds', selection=background) }}"><button
+                    type="button">Details</button></a><br>
+            {% endfor %}
+            <a href="/classes"><button type="button">Back</button></a>
+            <a href="/choice_review"><button type="submit">Next</button></a>
+        </form>
+    </body>
+</html>

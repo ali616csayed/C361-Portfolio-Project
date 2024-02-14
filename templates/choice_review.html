@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Character Review</title>
+    </head>
+    <body>
+        <h1>Choice Review</h1>
+        <h2>Selection: {{ selection }}</h2>
+        <p>Are you sure you would like to proceed with {{ selection }}?</p>
+        <a href="{{ selection_page }}"><button type="button">Back</button></a>
+        <a href="{{ next_page }}"><button type="button">Next</button></a>
+    </body>
+</html>
